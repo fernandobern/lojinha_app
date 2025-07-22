@@ -26,7 +26,8 @@
             <br>
             <input type="text" name="cidade" placeholder="Cidade" required>
             <input type="text" name="bairro" placeholder="Bairro" required>
-            <input type="text" name="endereco" placeholder="Endereço" required>
+            <input type="text" name="rua" placeholder="Rua" required>
+            <input type="text" name="numero" placeholder="Nemero da casa" required>
             <input type="number" name="cep" placeholder="Cep" required>
             <button type="submit">Cadastrar</button>
         </form>

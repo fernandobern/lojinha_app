@@ -12,7 +12,7 @@ if (isset($_POST['update'])) {
     $tel = trim($_POST['tel']);
     $email = trim($_POST['email']);
     $cidade = trim($_POST['cidade']);
-    $endereco = trim($_POST['endereco']);
+    $rua = trim($_POST['rua']);
     $bairro = trim($_POST['bairro']);
     $cep = trim($_POST['cep']);
 
@@ -28,7 +28,7 @@ if (isset($_POST['update'])) {
         exit();
     }
 
-    $stmtEndereco = $conn->prepare("UPDATE enderecos SET cidade = ?, endereco = ?, bairro = ?, cep = ? WHERE cliente_id = ?");
+    $stmtEndereco = $conn->prepare("UPDATE enderecos SET cidade = ?, rua = ?, bairro = ?, cep = ? WHERE cliente_id = ?");
     $stmtEndereco->bind_param("ssssi", $cidade, $endereco, $bairro, $cep, $id);
     if (!$stmtEndereco->execute()) {
         echo "Erro ao atualizar endereço: " . $stmtEndereco->error;

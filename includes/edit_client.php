@@ -19,6 +19,7 @@ if (!empty($_GET['id'])) {
             $name = $client_data['name'];
             $tel = $client_data['tel'];
             $email = $client_data['email'];
+            //$rua = $client_data['rua'];
 
             $sqlUpdate =  $conn->query("UPDATE clientes SET name='$name',tel='$tel',email='$email' WHERE id='$id'");
             }

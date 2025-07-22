@@ -1,9 +1,11 @@
 <?php
 include ('../includes/edit_client.php');
 include ('../includes/save_edit_cliente.php');
+include_once ('../includes/functions/endereco_cliente.php');
 
 // Buscar endereço do cliente (usando função externa)
 $endereco = getEndereco($cliente_id, $conn);
+var_dump($endereco);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +32,7 @@ $endereco = getEndereco($cliente_id, $conn);
             <br>
             <input type="text" name="cidade" placeholder="Cidade" value="<?php echo $endereco['cidade'] ?>">
             <input type="text" name="bairro" placeholder="Bairro" value="<?php echo $endereco['bairro']  ?>">
-            <input type="text" name="endereco" placeholder="Endereço" value="<?php echo $endereco['endereco'] ?>">
+            <input type="text" name="rua" placeholder="Rua" value="<?php echo $endereco['rua'] ?>">
             <input type="number" name="cep" placeholder="Cep" value="<?php echo $endereco['cep']  ?>">
             <input type="hidden" name="id" value="<?php echo $id ?>">
             <button type="update" name="update">Salvar Edição</button>

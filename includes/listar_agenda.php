@@ -5,7 +5,7 @@ include '../includes/conexao.php';
 $sqlAgenda = "
     SELECT * FROM resumo_agendamentos
     WHERE 
-    deletado_em IS NULL AND data >= CURDATE()
+    deleted_at IS NULL AND data >= CURDATE()
     ORDER BY 
     agendamento_id
 ";

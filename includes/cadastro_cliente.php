@@ -8,8 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $tel = $_POST['tel'];
     $email = $_POST['email'];
-    $endereco = $_POST['endereco'];
+    $cidade = $_POST['cidade'];
     $bairro = $_POST['bairro'];
+    $rua = $_POST['rua'];
+    $numero = $_POST['numero'];
     $cep = $_POST['cep'];
     $data_cadastro = date("Y-m-d H:i:s");
 
@@ -26,11 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $cliente_id = $stmt_cliente->insert_id;
 
             // Preparar insert SQL para inserir os dados na tabela 'enderecos'
-            $sql_endereco = "INSERT INTO enderecos (endereco, bairro, cep, cliente_id) VALUES (?, ?, ?, ?)";
+            $sql_endereco = "INSERT INTO enderecos (cidade, bairro, rua, numero, cep, cliente_id) VALUES (?,?,?,?, ?, ?)";
 
             if ($stmt_endereco = $conn->prepare($sql_endereco)) {
                 // Bind dos parâmetros e execução da consulta para 'enderecos'
-                $stmt_endereco->bind_param("sssi", $endereco, $bairro, $cep, $cliente_id);
+                $stmt_endereco->bind_param("ssssii", $cidade, $bairro,$rua, $numero, $cep, $cliente_id);
 
                 if ($stmt_endereco->execute()) {
                     header('Location: ../public/clientes.php');

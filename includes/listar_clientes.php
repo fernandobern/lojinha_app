@@ -7,7 +7,7 @@ $sql = "SELECT id, name, tel, email, created_at FROM clientes WHERE (name LIKE '
 
 $result = $conn->query($sql);
 
-$sqlEndereco = "SELECT bairro, endereco FROM enderecos WHERE bairro LIKE '%$query%' or endereco LIKE '%$query%'";
+$sqlEndereco = "SELECT bairro, rua FROM enderecos WHERE bairro LIKE '%$query%' or rua LIKE '%$query%'";
 $resultEndereco = $conn->query($sqlEndereco);
 
 $conn->close(); 

@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         try {
             //criar query
-            $query = "INSERT INTO pets (name_pet, especie, cliente_id, raca, sexo, peso, idade, birth, observacoes) 
+            $query = "INSERT INTO pets (name, especie, cliente_id, raca, sexo, peso, idade, birth, observacoes) 
             VALUES (?,?,?,?,?,?,?,?,?)";
 
             //enviar dados

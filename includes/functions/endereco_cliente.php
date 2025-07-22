@@ -10,8 +10,7 @@ if (!$cliente_id || !is_numeric($cliente_id)) {
 }
 
 function getEndereco($cliente_id, $conn) {
-    $sql = "SELECT *
-            FROM enderecos WHERE cliente_id = ?";
+    $sql = "SELECT * FROM enderecos WHERE cliente_id = ?";
     
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("i", $cliente_id); // Passa apenas um inteiro

@@ -34,7 +34,7 @@ $petsCliente = getPets($cliente, $conn);
                 <?php
                 foreach ($petsCliente as $pet) {
                     echo "<div class='pet-card'>";
-                    echo "<h4>Nome: " . htmlspecialchars($pet['name_pet']) . "</h4>";
+                    echo "<h4>Nome: " . htmlspecialchars($pet['name']) . "</h4>";
                     echo "<p>Espécie: " . htmlspecialchars($pet['especie']) . "</p>";
                     echo "<p>Raça: " . htmlspecialchars($pet['raca']) . "</p>";
                     echo "<p>Sexo: " . htmlspecialchars($pet['sexo']) . "</p>";
