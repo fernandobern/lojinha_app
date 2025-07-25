@@ -25,7 +25,7 @@ $endereco = getEndereco($cliente_id, $conn);
     <div class="">
         <!-- Exibe o nome do cliente ou uma mensagem de erro -->
         <?php if ($cliente): ?>
-            <span>Você está agendando para:
+            <span style="color: white;">Você está agendando para:
                 <h3><?php echo htmlspecialchars($cliente['name']); ?></h3>
                 <br>
                 Com o telefone:
@@ -36,7 +36,13 @@ $endereco = getEndereco($cliente_id, $conn);
                 if ($endereco === null) {
                     echo "Enderenço não cadastrado.";
                 } else {
-                    echo htmlspecialchars($endereco['endereco']);
+                    echo "Bairro: " .htmlspecialchars($endereco['bairro']."");
+                } ?></h3>
+                <h3><?php  
+                if ($endereco === null) {
+                    echo "Enderenço não cadastrado.";
+                } else {
+                    echo "Rua: " .htmlspecialchars($endereco['rua']."");
                 } ?></h3>
             </span>
         <?php else: ?>

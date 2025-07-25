@@ -5,7 +5,6 @@ include_once ('../includes/functions/endereco_cliente.php');
 
 // Buscar endereço do cliente (usando função externa)
 $endereco = getEndereco($cliente_id, $conn);
-var_dump($endereco);
 ?>
 
 <!DOCTYPE html>
@@ -30,10 +29,10 @@ var_dump($endereco);
             <input type="text" name="email" placeholder="E-mail" value="<?php echo $email ?>">
             <p class="mini-title">Endereço de Retirada e Entrega:</p>
             <br>
-            <input type="text" name="cidade" placeholder="Cidade" value="<?php echo $endereco['cidade'] ?>">
-            <input type="text" name="bairro" placeholder="Bairro" value="<?php echo $endereco['bairro']  ?>">
-            <input type="text" name="rua" placeholder="Rua" value="<?php echo $endereco['rua'] ?>">
-            <input type="number" name="cep" placeholder="Cep" value="<?php echo $endereco['cep']  ?>">
+            <input type="text" name="cidade" placeholder="Cidade" value="<?php if ($endereco === [''] || null) echo "nenhum dado encontrado"; else echo $endereco['cidade']; ?>">
+            <input type="text" name="bairro" placeholder="Bairro" value="<?php if ($endereco === [''] || null) echo "nenhum dado encontrado"; else echo $endereco['bairro']; ?>">
+            <input type="text" name="rua" placeholder="Rua" value="<?php if ($endereco === [''] || null) echo "nenhum dado encontrado"; else echo $endereco['rua']; ?>">
+            <input type="number" name="cep" placeholder="Cep" value="<?php if ($endereco === [''] || null) echo "nenhum dado encontrado"; else echo $endereco['cep']; ?>">
             <input type="hidden" name="id" value="<?php echo $id ?>">
             <button type="update" name="update">Salvar Edição</button>
         </form>

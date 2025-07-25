@@ -39,7 +39,8 @@ $cliente = getCliente($cliente_id, $conn);
                     <h3 class="sub-title"><?php echo htmlspecialchars($agendamento['id']); ?></h3>
                     <h3 class="sub-title">Cliente ID:<?php echo htmlspecialchars($agendamento['cliente_id']); ?></h3>
                     <h3 class="sub-title">Cliente:<?php echo htmlspecialchars($cliente['name']); ?></h3>
-                    <h3 class="sub-title">Endereco:<?php echo htmlspecialchars($endereco['endereco']); ?></h3>
+                    <h3 class="sub-title">Bairro:<?php echo htmlspecialchars($endereco['rua']); ?></h3>
+                    <h3 class="sub-title">Rua:<?php echo htmlspecialchars($endereco['bairro']); ?></h3>
                 </span>
             <?php else: ?>
                 <h2><?php echo 'No momento não existe agendamento selecionado!'; ?></h2>
@@ -51,7 +52,7 @@ $cliente = getCliente($cliente_id, $conn);
     <input type="number" name="cliente_id" value="<?php echo htmlspecialchars($agendamento['cliente_id']); ?>" readonly>
     <input type="text" name="cliente_nome" value="<?php echo htmlspecialchars($cliente['name']); ?>" readonly>
     <input type="number" name="endereco_id" value="<?php echo htmlspecialchars($agendamento['endereco_id']); ?>" readonly>
-    <input type="text" name="endereco" value="<?php echo htmlspecialchars($endereco['endereco']); ?>" readonly>
+    <input type="text" name="rua" value="<?php echo htmlspecialchars($endereco['rua']); ?>" readonly>
 
 
     <!-- Seleção de PET -->
@@ -68,7 +69,7 @@ $cliente = getCliente($cliente_id, $conn);
             <?php foreach ($pets as $pet) : ?>
                 <tr>
                     <td><?= htmlspecialchars($pet['id']) ?></td>
-                    <td><?= htmlspecialchars($pet['name_pet']) ?></td>
+                    <td><?= htmlspecialchars($pet['name']) ?></td>
                     <td><?= htmlspecialchars($pet['peso']) ?></td>
                     <td><?= htmlspecialchars($pet['sexo']) ?></td>
                     <td>
