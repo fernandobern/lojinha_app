@@ -17,11 +17,12 @@ $data_id = $_GET['id'];
     // 2. Atualizar como excluídos (para todos os pets do cliente)
     $now = date("Y-m-d");
     //$data_id = $_GET['id'];
-    
-    $updateQuery = "UPDATE agendamento_datas SET deleted_at = CURDATE() WHERE id = $data_id";
+        
+    $updateQuery = "UPDATE agendamento_datas SET deleted_at = ? WHERE id = ?";
     $updateStmt = $conn->prepare($updateQuery);
-    $updateStmt->bind_param("ss", $now, $data_id);
+    $updateStmt->bind_param("si", $now, $data_id);
     $updateStmt->execute();
+
 
      header('Location: ../../public/agendamentos.php');
     // 3. Retornar os pets que foram excluídos

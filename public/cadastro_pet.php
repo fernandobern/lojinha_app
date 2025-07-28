@@ -23,7 +23,7 @@ $petsCliente = getPets($cliente, $conn);
 </head>
 <body class="container">
 
-<?php include ('../templates/header_pdv.php'); ?>
+<?php include ('../templates/header.php'); ?>
     <main class="form-box">
         <form id="cliente-form" action="../includes/cadastrar_pet.php" method="post">
             <h3>CADASTRANDO PARA: <strong><?php echo $name ?></strong></h3>

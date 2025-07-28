@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../public/config.php");
                 exit();
             } else {
-                header("Location: ../public/home.php"); // exemplo para outros tipos
+                header("Location: ../public/cadastro_cliente.php"); // exemplo para outros tipos
                 exit();
             }
         } else {

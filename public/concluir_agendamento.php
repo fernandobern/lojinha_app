@@ -1,5 +1,5 @@
 <?php
-include '../templates/header_pdv.php';
+include '../templates/header.php';
 include '../includes/conexao.php'; // Inclui a conexão com o banco
 include '../includes/functions/dados_cliente.php';
 include '../includes/functions/endereco_cliente.php';
@@ -94,8 +94,8 @@ $cliente = getCliente($cliente_id, $conn);
             <?php foreach ($servicos as $servico) : ?>
                 <tr>
                     <td><?= $servico['id'] ?></td>
-                    <td><?= $servico['name'] ?></td>
-                    <td><?= $servico['preco'] ?></td>
+                    <td><?= $servico['descricao'] ?></td>
+                    <td><?= $servico['valor'] ?></td>
                     <td><?= $servico['duracao'] ?></td>
                     <td>
                         <input type="checkbox" name="servico[]" value="<?= $servico['id'] ?>">

@@ -50,7 +50,6 @@
     </style>
 </head>
 <body>
-
     <?php include ('../templates/header.php'); ?>
     <br>
     <h1 class="container">Acompanhamento de Banhos de Hoje</h1>

@@ -14,7 +14,7 @@
 </head>
 <body class="container">
 
-<?php include ('../templates/header_pdv.php'); ?>
+<?php include ('../templates/header.php'); ?>
     <main class="form-box">
         <form id="cliente-form" action="../includes/cadastro_cliente.php" method="post">
             <p class="sub-title">Cadastro de clientes:</p>

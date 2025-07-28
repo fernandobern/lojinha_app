@@ -1,5 +1,5 @@
 <?php
-include '../templates/header_pdv.php';
+include '../templates/header.php';
 //include '../includes/conexao.php'; // Inclui a conexão com o banco
 include '../includes/functions/dados_cliente.php';
 include '../includes/functions/endereco_cliente.php';

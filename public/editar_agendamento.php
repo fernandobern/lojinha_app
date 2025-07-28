@@ -54,13 +54,13 @@ if ($agendamento_id) {
 }
 
 // Buscar pets do cliente
-$pets = $conn->prepare("SELECT id, name_pet FROM pets WHERE cliente_id = ?");
+$pets = $conn->prepare("SELECT id, name FROM pets WHERE cliente_id = ?");
 $pets->bind_param("i", $cliente_id);
 $pets->execute();
 $resultadoPets = $pets->get_result();
 
 // Buscar serviços disponíveisc
-$servicos = $conn->query("SELECT id, name, preco, duracao FROM servicos");
+$servicos = $conn->query("SELECT id, descricao, valor, duracao FROM servicos");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -74,7 +74,7 @@ $servicos = $conn->query("SELECT id, name, preco, duracao FROM servicos");
 </head>
 <body>
 
-<?php include ('../templates/header_pdv.php'); ?>
+<?php include ('../templates/header.php'); ?>
 <form action="../includes/atualizar_agendamento.php" method="POST" class="form-agendamento">
     <h2 class="titulo">Editar Agendamento</h2>
     <input type="hidden" name="agendamento_id" value="<?= $agendamento_id ?>">
@@ -97,7 +97,7 @@ $servicos = $conn->query("SELECT id, name, preco, duracao FROM servicos");
             <select name="pet_id" required>
                 <?php while ($row = $resultadoPets->fetch_assoc()): ?>
                     <option value="<?= $row['id'] ?>" <?= ($row['id'] == $pet_id) ? 'selected' : '' ?>>
-                        <?= $row['name_pet'] ?>
+                        <?= $row['name'] ?>
                     </option>
                 <?php endwhile; ?>
             </select>
@@ -148,12 +148,12 @@ $servicos = $conn->query("SELECT id, name, preco, duracao FROM servicos");
                     type="checkbox" 
                     name="servicos[]" 
                     value="<?= $servico['id'] ?>" 
-                    data-valor="<?= $servico['preco'] ?>" 
+                    data-valor="<?= $servico['valor'] ?>" 
                     data-duracao="<?= $servico['duracao'] ?>"
                     <?= in_array($servico['id'], $servicos_agendamento) ? 'checked' : '' ?>
                 >
-                <?= htmlspecialchars($servico['name']) ?> -
-                R$ <?= number_format($servico['preco'], 2, ',', '.') ?> 
+                <?= htmlspecialchars($servico['descricao']) ?> -
+                R$ <?= number_format($servico['valor'], 2, ',', '.') ?> 
                 (<?= $servico['duracao'] ?> min)
             </label>
         <?php endwhile; ?>

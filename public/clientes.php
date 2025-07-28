@@ -27,7 +27,7 @@
 </head>
 <body class="container">
 
-<?php include ('../templates/header_pdv.php'); ?>
+<?php include ('../templates/header.php'); ?>
 <?php include ('../includes/listar_clientes.php'); ?>
 <main class="form-box">
     <div>

@@ -9,8 +9,8 @@ $agendamentosHoje = [];
 $sql = "
     SELECT * FROM resumo_agendamentos
     WHERE 
-        deletado_em IS NULL 
-        AND agendamento_status = 'banho'
+        deleted_at IS NULL 
+        AND status_data = 'banho'
         AND data = CURDATE()
 ";
 
@@ -38,7 +38,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         'valor' => $row['valor_total'],
         'obs_cliente' => $row['obs_cliente'],
         'obs_final' => $row['obs_final'],
-        'retirada' => $row['retirada']
+        //'retirada' => $row['retirada_cliente']
     ];
 }
 
