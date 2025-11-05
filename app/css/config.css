@@ -1,0 +1,138 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card label {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.card input,
+.card select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.card button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.card button:hover {
+    background-color: #2980b9;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.table thead {
+    background: #4a90e2; /* Azul cabeçalho */
+    color: #fff;
+    font-weight: bold;
+}
+
+.table th, 
+.table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #f9f9f9; /* Zebra */
+}
+
+.table tbody tr:hover {
+    background: #f1f7ff;
+    transition: 0.2s ease-in-out;
+}
+
+/* Botões dentro da tabela */
+.table .btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 6px;
+    display: inline-block;
+}
+
+.table .btn {
+    background: #4a90e2;
+    color: #fff;
+}
+
+.table .btn:hover {
+    background: #357abd;
+}
+
+.table .btn_red {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.table .btn_red:hover {
+    background: #c0392b;
+}
+
+.alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.alert.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}

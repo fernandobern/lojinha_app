@@ -1,0 +1,7 @@
+.env
+conexao.php
+docker-compose.yml
+dockerfile
+vendor/
+node_modules/
+*.log
